@@ -33,6 +33,15 @@ var a10r = {
         return pe;
       }, {})
     )
+    // убираем повторные слова в массивах аннограмм
+    .map(function(el){
+      return Object.keys(
+        el.reduce(function(pe, ce){
+          pe[ce] = 'str';
+          return pe;
+        }, {})
+      );
+    })
     // оставляем масивы длиной больше 1 элемента 
     .filter(function(el){
       return el.length > 1;
